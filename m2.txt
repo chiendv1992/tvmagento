@@ -14,3 +14,10 @@ rm -rf pub/static/*
 php bin/magento aibs:urlrewrites:regenerate 7
 
 mysql -u [uname] -p[pass] [db_to_restore] < [backupfile.sql]   updatabase
+
+
+rm -rf  var/di 
+	var/generation 
+	var/cache/* 
+	var/log/* 
+	var/page_cache/*
