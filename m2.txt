@@ -2,7 +2,7 @@ php bin/magento deploy:mode:set developer
 php bin/magento deploy:mode:set production
 php bin/magento setup:upgrade (php bin/magento se:up , php bin/magento s:up)
 php bin/magento s:s:d -f (ja_JP en_US)(php bin/magento setup:static-content:deploy)
-php bin/magento setup:di:compile
+php bin/magento setup:di:compile (s:d:c)
 php bin/magento c:f  
 php bin/magento c:c
 php bin/magento indexer:reindex
@@ -14,6 +14,8 @@ rm -rf pub/static/*
 php bin/magento aibs:urlrewrites:regenerate 7
 
 mysql -u [uname] -p[pass] [db_to_restore] < [backupfile.sql]   updatabase
+
+mysql -uroot -pMagento@2017 localmagento2 < local_magento_09082018.sql
 
 
 rm -rf  var/di 
