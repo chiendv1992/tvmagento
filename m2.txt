@@ -23,7 +23,15 @@ rm -rf  var/di
 	var/cache/* 
 	var/log/* 
 	var/page_cache/*
+
+rm -rf var/view_preprocessed
+
 php bin/magento s:s:d -f --area frontend ja_JP en_US (build frontend)
- php bin/magento s:s:d -f --area frontend ja_JP en_US
+
+php bin/magento s:s:d -f --area frontend ja_JP --theme Aeon/ibs (build theme)
+
+khi thay doi css js thi xoa var/view_preprocessed
+
+
 
 
