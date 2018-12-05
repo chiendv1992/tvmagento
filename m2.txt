@@ -23,3 +23,7 @@ rm -rf  var/di
 	var/cache/* 
 	var/log/* 
 	var/page_cache/*
+php bin/magento s:s:d -f --area frontend ja_JP en_US (build frontend)
+ php bin/magento s:s:d -f --area frontend ja_JP en_US
+
+
