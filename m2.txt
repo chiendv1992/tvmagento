@@ -1,36 +1,37 @@
-php bin/magento deploy:mode:set developer
-php bin/magento deploy:mode:set production
+php bin/magento deploy:mode:set developer (chuy?n mode dev)
+php bin/magento deploy:mode:set production	(chuy?n mode production)
 php bin/magento setup:upgrade (php bin/magento se:up , php bin/magento s:up)
 php bin/magento s:s:d -f (ja_JP en_US)(php bin/magento setup:static-content:deploy)
 php bin/magento setup:di:compile (s:d:c)
-php bin/magento c:f  
-php bin/magento c:c
+php bin/magento c:f  (cache:flush)
+php bin/magento c:c  (cache:clear)
 php bin/magento indexer:reindex
 php bin/magento cron:run
 php bin/magento module:enable/disible [Modeule_Name]
 
-rm -rf pub/static/*
 
 php bin/magento aibs:urlrewrites:regenerate 7
 
 mysql -u [uname] -p[pass] [db_to_restore] < [backupfile.sql]   updatabase
 
-mysql -uroot -pMagento@2017 localmagento2 < local_magento_09082018.sql
+mysql -uroot -pMagento@2017 localmagento2 < local_magento_09082018.sql (add db vao)
 
-
+rm -rf	pub/static/*
 rm -rf  var/di 
-	var/generation 
-	var/cache/* 
-	var/log/* 
-	var/page_cache/*
+rm -rf	var/generation 
+rm -rf	var/cache/* 
+rm -rf	var/log/* 
+rm -rf	var/page_cache/*
+rm -rf 	var/view_preprocessed (thay doi css hoac js thi can phai xoa)
+rm -rf 	generated/
 
-rm -rf var/view_preprocessed
 
 php bin/magento s:s:d -f --area frontend ja_JP en_US (build frontend)
 
 php bin/magento s:s:d -f --area frontend ja_JP --theme Aeon/ibs (build theme)
 
-khi thay doi css js thi xoa var/view_preprocessed
+build mà k load dc css, js thì file .htaccess
+
 
 
 
