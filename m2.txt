@@ -1,3 +1,8 @@
+172.16.130
+7EAsmcqRNK
+User: 7qJjpHFx2npbbZHDCKpN
+Pass: 7qJjpHFx2npbbZHDCKpN
+
 php bin/magento deploy:mode:set developer (chuy?n mode dev)
 php bin/magento deploy:mode:set production	(chuy?n mode production)
 php bin/magento setup:upgrade (php bin/magento se:up , php bin/magento s:up)
@@ -9,29 +14,26 @@ php bin/magento indexer:reindex
 php bin/magento cron:run
 php bin/magento module:enable/disible [Modeule_Name]
 
-
 php bin/magento aibs:urlrewrites:regenerate 7
 
-mysql -u [uname] -p[pass] [db_to_restore] < [backupfile.sql]   updatabase
+mysql -u[uname] -p[pass] [db_to_restore] < [backupfile.sql]   updatabase
 
 mysql -uroot -pMagento@2017 localmagento2 < local_magento_09082018.sql (add db vao)
 
 rm -rf	pub/static/*
 rm -rf  var/di 
-rm -rf	var/generation 
+rm -rf	var/generate
 rm -rf	var/cache/* 
 rm -rf	var/log/* 
 rm -rf	var/page_cache/*
 rm -rf 	var/view_preprocessed (thay doi css hoac js thi can phai xoa)
 rm -rf 	generated/
 
-
 php bin/magento s:s:d -f --area frontend ja_JP en_US (build frontend)
 
 php bin/magento s:s:d -f --area frontend ja_JP --theme Aeon/ibs (build theme)
 
 build mà k load dc css, js thì file .htaccess
-
 
 
 
